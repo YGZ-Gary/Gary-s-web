@@ -180,67 +180,71 @@ def page5():
 def page6():
     n=0
     st.write('网络知识竞答')
-    choices = st.radio(
-    '选择：',
-    ['第一题', '第二题', '第三题','第四题']
-    )
-    if choices=='第一题':
-        st.write('本up的网名是什么？')
+    colu1,colu2=st.columns([1,1])
+    with colu1:
+        st.write('一.本up的网名是什么？')
         cb1 = st.checkbox('GARY')
         cb2 = st.checkbox('奏始皇')
         cb3 = st.checkbox('bullsht')
         cb4 = st.checkbox('一只在CAT 3 landing的 \n CATHAY PACIFIC A-350 1000')
         l = [cb1, cb2, cb3, cb4]
         if st.button('确认答案'):
-            if True in l:
+            if cb1==True and cb2==True and cb3==True and cb4==True :
                 st.write('你过关')
-                n+=25
+                n+=100
+                st.write('您的分数：',n)
             else:
                 st.write('该罚！')
-    st.write('您的分数：',n)  
-    if choices=='第二题':  
-        st.write('油管是什么？(单选)')
+                st.write('您的分数：',n)
+    with colu2:
+        st.write('二.油管是什么？(单选)')
         cb11 = st.checkbox('‘北溪2’天然气管道')
         cb21 = st.checkbox('Google')
         cb31 = st.checkbox('youtube')
         cb41= st.checkbox('你的吸管')
-        l = [cb31]
-        if st.button('确认答案'):
-            if True in l:
+        l = [cb11,cb21,cb31,cb41]
+        if st.button('确定？'):
+            if cb11==False and cb21==False and cb31==True and cb41==False:
                 st.write('你过关')
-                n+=25
+                n+=100
+                st.write('您的分数：',n)
             else:
                 st.write('该罚！')
-    st.write('您的分数：',n)       
-    if choices=='第三题':     
-        st.write('石油会滋生什么？(单选)')
+                st.write('您的分数：',n)
+    st.write('----------------------')
+    colu3,colu4=st.columns([1,1])
+    with colu3:     
+        st.write('三.石油会滋生什么？(单选)')
         cb111 = st.checkbox('细菌')
         cb211 = st.checkbox('美菌')
         cb311 = st.checkbox('钱')
         cb411= st.checkbox('金坷垃')
-        l = [cb211]
-        if st.button('确认答案'):
-            if True in l:
+        l = [cb111,cb211,cb311,cb411]
+        if st.button('选它'):
+            if cb111==False and cb211==True and cb311==False and cb411==False:
                 st.write('你过关')
-                n+=25
+                n+=100
+                st.write('您的分数：',n)
             else:
                 st.write('该罚！')
-    st.write('您的分数：',n)         
-    if choices=='第四题': 
-        st.write('波音767重型客机是什么？(单选)')
+                st.write('您的分数：',n)
+             
+    with colu4: 
+        st.write('四.波音767重型客机是什么？(单选)')
         cb1111 = st.checkbox('由美国Boeing公司制造的长程宽体客机')
         cb2111 = st.checkbox('Air Canada flight 143 的专属滑翔机')
         cb3111 = st.checkbox('它停产了')
         cb4111= st.checkbox('能够毙敌2000多人的重型巡飞弹')
-        l = [cb4111]
-        if st.button('确认答案'):
-            if True in l:
+        l = [cb1111,cb2111,cb3111,cb4111]
+        if st.button('ok'):
+            if cb1111==False and cb2111==False and cb3111==False and cb4111==True:
                 st.write('你过关')
                 n+=25
+                st.write('您的分数：',n)
             else:
                 st.write('该罚！')
-             
-    st.write('您的分数：',n)
+                st.write('您的分数：',n)
+    
 def img_change(img,rc,gc,bc):
     '''图片处理'''
     width,height=img.size

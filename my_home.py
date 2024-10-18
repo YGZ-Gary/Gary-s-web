@@ -2,7 +2,7 @@
 import streamlit as st
 from PIL import Image
 import pandas as pd
-page=st.sidebar.radio('朕的首页',['兴趣推荐','图片处理工具','词典','留言区','网页跳转','知识答题'])
+page=st.sidebar.radio('朕的首页',['兴趣推荐','图片处理工具','词典','留言区','网页跳转','知识答题','advertisement'])
 def page1():
     '''兴趣推荐'''
     choice = st.radio(
@@ -257,7 +257,9 @@ def img_change(img,rc,gc,bc):
             img_array[x,y]=(g,r,b)
     return img
 
-
+def page7():
+    st.write('敬请期待')
+    st.text('oops')
 if page=="兴趣推荐":
     page1()
 elif page=='图片处理工具':
@@ -270,3 +272,5 @@ elif page=='网页跳转':
     page5()
 elif page=='知识答题':
     page6()
+elif page=='advertisement':
+    page7()
